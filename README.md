@@ -55,7 +55,7 @@ Python responsible for this code
 
 ### Deploy in your vps
 ```sh
-git clone https://github.com/craziks-creator/telegram-Filter-Bot
+git clone https://github.com/craziks-creator/Telegram-filter-bot-unlimited
 cd Unlimited-Filter-Bot
 pip3 install -r requirements.txt
 # <Create config.py appropriately>
