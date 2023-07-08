@@ -4,9 +4,14 @@ import streamlit
 import pyrogram
 # create a coro function `coro` up here
 
-loop = new_event_loop()
-set_event_loop(loop)
-results = run(coro)
+def get_or_create_eventloop():
+    try:
+        return asyncio.get_event_loop()
+    except RuntimeError as ex:
+        if "There is no current event loop in thread" in str(ex):
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            return asyncio.get_event_loop()
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
