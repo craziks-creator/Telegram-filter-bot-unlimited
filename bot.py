@@ -1,7 +1,11 @@
 import os
 import asyncio
 import pyrogram
+# create a coro function `coro` up here
 
+loop = new_event_loop()
+set_event_loop(loop)
+results = run(coro)
 if bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
